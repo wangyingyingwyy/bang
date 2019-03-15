@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //第一块. 数据类型检测方法（typeof、instanceof）
+    //typeof
+    console.log(typeof 123); //number
+    console.log(typeof true); //boolean
+    console.log(typeof "abc"); //string
+    console.log(typeof null); //object
+    //注意：typeof(null)返回的是object
+    console.log(typeof undefined); //undefined
+    console.log(typeof {name:"Mike",age:20}); //object
+    console.log(typeof function foo(){}); //function
+
+    //typeof可以用于被声明和未被声明的变量；
+    //但未被声明的变量不能用其他运算符运算，会引起报错
+    //其他运算符只能用于已经声明的变量
+    var n1;
+    console.log(n1==undefined);//true
+    //console.log(n2==undefined);//程序报错
+    console.log(typeof n2=='undefined');//true
+    
+    console.log(typeof Array);//function
+    console.log(typeof Function);//function
+    console.log(typeof Date);//function
+    console.log(typeof Number);//function
+    //注意：结果为function，不是string或者Boolean
+    console.log(typeof Math);//object
+    console.log(typeof JSON);//object
+    //instanceof  (左侧操作数为对象，右侧操作数为原型链中的一个类型时，返回为true)
+    var a = {name:"Mike",age:20};
+    console.log(a instanceof Object);//true
+    var b = [12,34,{},""];
+    console.log(b instanceof Array);//true
+    console.log(b instanceof Object);//true
+    var Person = function(){
+    //...
+    };
+    var p1 = new Person();
+    console.log(p1 instanceof Person);//true
+
+</script>
+</html>
